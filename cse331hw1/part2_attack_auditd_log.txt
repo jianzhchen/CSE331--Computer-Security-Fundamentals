@@ -1,0 +1,146 @@
+type=AVC msg=audit(1505882173.833:290884): avc:  denied  { read write } for  pid=99403 comm="hw1new" path="/dev/pts/4" dev="devpts" ino=7 scontext=user_u:user_r:httpd_user_script_t:s0 tcontext=user_u:object_r:user_devpts_t:s0 tclass=chr_file
+type=AVC msg=audit(1505882173.833:290884): avc:  denied  { read } for  pid=99403 comm="hw1new" path="/home/regularuser/hw1/attack" dev="dm-0" ino=51604831 scontext=user_u:user_r:httpd_user_script_t:s0 tcontext=user_u:object_r:user_home_t:s0 tclass=file
+type=AVC msg=audit(1505882173.833:290884): avc:  denied  { read write } for  pid=99403 comm="hw1new" path="/dev/pts/4" dev="devpts" ino=7 scontext=user_u:user_r:httpd_user_script_t:s0 tcontext=user_u:object_r:user_devpts_t:s0 tclass=chr_file
+type=AVC msg=audit(1505882173.833:290884): avc:  denied  { read write } for  pid=99403 comm="hw1new" path="/dev/pts/4" dev="devpts" ino=7 scontext=user_u:user_r:httpd_user_script_t:s0 tcontext=user_u:object_r:user_devpts_t:s0 tclass=chr_file
+type=SYSCALL msg=audit(1505882173.833:290884): arch=c000003e syscall=59 per=400000 success=yes exit=0 a0=7db9e0 a1=70b2e0 a2=797610 a3=7fffffffe490 items=2 ppid=99310 pid=99403 auid=1001 uid=1001 gid=1001 euid=1001 suid=1001 fsuid=1001 egid=1001 sgid=1001 fsgid=1001 tty=(none) ses=38 comm="hw1new" exe="/home/regularuser/hw1/hw1new" subj=user_u:user_r:httpd_user_script_t:s0 key=(null)
+type=EXECVE msg=audit(1505882173.833:290884): argc=1 a0="./hw1new"
+type=CWD msg=audit(1505882173.833:290884):  cwd="/home/regularuser/hw1"
+type=PATH msg=audit(1505882173.833:290884): item=0 name="./hw1new" inode=51972182 dev=fd:00 mode=0100775 ouid=1000 ogid=1000 rdev=00:00 obj=user_u:object_r:httpd_user_script_exec_t:s0 objtype=NORMAL
+type=PATH msg=audit(1505882173.833:290884): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=217254 dev=fd:00 mode=0100755 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:ld_so_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882173.833:290884): proctitle="./hw1new"
+type=AVC msg=audit(1505882173.835:290885): avc:  denied  { execmem } for  pid=99403 comm="hw1new" scontext=user_u:user_r:httpd_user_script_t:s0 tcontext=user_u:user_r:httpd_user_script_t:s0 tclass=process
+type=SYSCALL msg=audit(1505882173.835:290885): arch=c000003e syscall=9 per=400000 success=no exit=-13 a0=0 a1=1000 a2=3 a3=22 items=0 ppid=99310 pid=99403 auid=1001 uid=1001 gid=1001 euid=1001 suid=1001 fsuid=1001 egid=1001 sgid=1001 fsgid=1001 tty=(none) ses=38 comm="hw1new" exe="/home/regularuser/hw1/hw1new" subj=user_u:user_r:httpd_user_script_t:s0 key=(null)
+type=PROCTITLE msg=audit(1505882173.835:290885): proctitle="./hw1new"
+
+
+=================================================================
+other processes accessing
+
+type=SYSCALL msg=audit(1505882176.844:290886): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff71c0432 a1=80000 a2=1b6 a3=24 items=1 ppid=99404 pid=99405 auid=4294967295 uid=81 gid=81 euid=0 suid=0 fsuid=0 egid=81 sgid=81 fsgid=81 tty=(none) ses=4294967295 comm="dbus-daemon-lau" exe="/usr/lib64/dbus-1/dbus-daemon-launch-helper" subj=system_u:system_r:system_dbusd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882176.844:290886):  cwd="/"
+type=PATH msg=audit(1505882176.844:290886): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882176.844:290886): proctitle=2F6C696236342F646275732D312F646275732D6461656D6F6E2D6C61756E63682D68656C706572006F72672E6665646F726170726F6A6563742E536574726F75626C6573686F6F7464
+type=SYSCALL msg=audit(1505882176.846:290887): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff71c0432 a1=80000 a2=1b6 a3=24 items=1 ppid=99404 pid=99405 auid=4294967295 uid=81 gid=81 euid=0 suid=0 fsuid=0 egid=81 sgid=81 fsgid=81 tty=(none) ses=4294967295 comm="dbus-daemon-lau" exe="/usr/lib64/dbus-1/dbus-daemon-launch-helper" subj=system_u:system_r:system_dbusd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882176.846:290887):  cwd="/"
+type=PATH msg=audit(1505882176.846:290887): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882176.846:290887): proctitle=2F6C696236342F646275732D312F646275732D6461656D6F6E2D6C61756E63682D68656C706572006F72672E6665646F726170726F6A6563742E536574726F75626C6573686F6F7464
+type=SYSCALL msg=audit(1505882176.854:290888): arch=c000003e syscall=2 success=yes exit=4 a0=7ffff6b1d432 a1=80000 a2=1b6 a3=24 items=1 ppid=99404 pid=99405 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="setroubleshootd" exe="/usr/bin/python2.7" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882176.854:290888):  cwd="/"
+type=PATH msg=audit(1505882176.854:290888): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882176.854:290888): proctitle=2F6C696236342F646275732D312F646275732D6461656D6F6E2D6C61756E63682D68656C706572006F72672E6665646F726170726F6A6563742E536574726F75626C6573686F6F7464
+type=SYSCALL msg=audit(1505882177.055:290889): arch=c000003e syscall=2 success=yes exit=6 a0=7ffff73e0432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99406 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="sh" exe="/usr/bin/bash" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882177.055:290889):  cwd="/"
+type=PATH msg=audit(1505882177.055:290889): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882177.055:290889): proctitle=7368002D63002F7362696E2F6C64636F6E666967202D7020323E2F6465762F6E756C6C
+type=SYSCALL msg=audit(1505882177.062:290890): arch=c000003e syscall=2 success=yes exit=6 a0=7ffff73e0432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99408 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="sh" exe="/usr/bin/bash" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882177.062:290890):  cwd="/"
+type=PATH msg=audit(1505882177.062:290890): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882177.062:290890): proctitle=7368002D63002F7362696E2F6C64636F6E666967202D7020323E2F6465762F6E756C6C
+type=SYSCALL msg=audit(1505882177.156:290891): arch=c000003e syscall=2 success=yes exit=10 a0=7ffff6b1d432 a1=80000 a2=1b6 a3=24 items=1 ppid=99404 pid=99405 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="setroubleshootd" exe="/usr/bin/python2.7" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882177.156:290891):  cwd="/"
+type=PATH msg=audit(1505882177.156:290891): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882177.156:290891): proctitle=2F6C696236342F646275732D312F646275732D6461656D6F6E2D6C61756E63682D68656C706572006F72672E6665646F726170726F6A6563742E536574726F75626C6573686F6F7464
+type=SYSCALL msg=audit(1505882177.158:290892): arch=c000003e syscall=2 success=yes exit=10 a0=7fffe9d356de a1=0 a2=1b6 a3=24 items=1 ppid=99404 pid=99405 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="setroubleshootd" exe="/usr/bin/python2.7" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882177.158:290892):  cwd="/"
+type=PATH msg=audit(1505882177.158:290892): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882177.158:290892): proctitle=2F6C696236342F646275732D312F646275732D6461656D6F6E2D6C61756E63682D68656C706572006F72672E6665646F726170726F6A6563742E536574726F75626C6573686F6F7464
+type=SYSCALL msg=audit(1505882177.668:290893): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff6b1d432 a1=80000 a2=1b6 a3=24 items=1 ppid=1 pid=99405 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="setroubleshootd" exe="/usr/bin/python2.7" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882177.668:290893):  cwd="/"
+type=PATH msg=audit(1505882177.668:290893): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882177.668:290893): proctitle=2F6C696236342F646275732D312F646275732D6461656D6F6E2D6C61756E63682D68656C706572006F72672E6665646F726170726F6A6563742E536574726F75626C6573686F6F7464
+type=SYSCALL msg=audit(1505882178.199:290894): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff6b1d432 a1=80000 a2=1b6 a3=24 items=1 ppid=1 pid=99405 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="setroubleshootd" exe="/usr/bin/python2.7" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.199:290894):  cwd="/"
+type=PATH msg=audit(1505882178.199:290894): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.199:290894): proctitle=2F6C696236342F646275732D312F646275732D6461656D6F6E2D6C61756E63682D68656C706572006F72672E6665646F726170726F6A6563742E536574726F75626C6573686F6F7464
+type=SYSCALL msg=audit(1505882178.244:290895): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99411 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.244:290895):  cwd="/"
+type=PATH msg=audit(1505882178.244:290895): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.244:290895): proctitle=72706D002D7166002F6465762F7074732F34
+type=SYSCALL msg=audit(1505882178.245:290896): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99411 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.245:290896):  cwd="/"
+type=PATH msg=audit(1505882178.245:290896): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.245:290896): proctitle=72706D002D7166002F6465762F7074732F34
+type=SYSCALL msg=audit(1505882178.344:290897): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99412 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.344:290897):  cwd="/"
+type=PATH msg=audit(1505882178.344:290897): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.344:290897): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.346:290898): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99412 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.346:290898):  cwd="/"
+type=PATH msg=audit(1505882178.346:290898): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.346:290898): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.466:290899): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff73e0432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99413 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="sh" exe="/usr/bin/bash" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.466:290899):  cwd="/"
+type=PATH msg=audit(1505882178.466:290899): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.466:290899): proctitle=7368002D6300756E616D65202D7020323E202F6465762F6E756C6C
+type=SYSCALL msg=audit(1505882178.477:290900): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99415 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.477:290900):  cwd="/"
+type=PATH msg=audit(1505882178.477:290900): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.477:290900): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.478:290901): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99415 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.478:290901):  cwd="/"
+type=PATH msg=audit(1505882178.478:290901): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.478:290901): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.553:290902): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99416 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.553:290902):  cwd="/"
+type=PATH msg=audit(1505882178.553:290902): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.553:290902): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.554:290903): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99416 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.554:290903):  cwd="/"
+type=PATH msg=audit(1505882178.554:290903): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.554:290903): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.574:290904): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99417 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.574:290904):  cwd="/"
+type=PATH msg=audit(1505882178.574:290904): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.574:290904): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.575:290905): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99417 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.575:290905):  cwd="/"
+type=PATH msg=audit(1505882178.575:290905): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.575:290905): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.634:290906): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99418 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.634:290906):  cwd="/"
+type=PATH msg=audit(1505882178.634:290906): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.634:290906): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.636:290907): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99418 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.636:290907):  cwd="/"
+type=PATH msg=audit(1505882178.636:290907): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.636:290907): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.688:290908): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99419 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.688:290908):  cwd="/"
+type=PATH msg=audit(1505882178.688:290908): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.688:290908): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.690:290909): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99419 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.690:290909):  cwd="/"
+type=PATH msg=audit(1505882178.690:290909): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.690:290909): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.750:290910): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99420 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.750:290910):  cwd="/"
+type=PATH msg=audit(1505882178.750:290910): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.750:290910): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.751:290911): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99420 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.751:290911):  cwd="/"
+type=PATH msg=audit(1505882178.751:290911): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.751:290911): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.816:290912): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99421 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.816:290912):  cwd="/"
+type=PATH msg=audit(1505882178.816:290912): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.816:290912): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.818:290913): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99421 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.818:290913):  cwd="/"
+type=PATH msg=audit(1505882178.818:290913): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.818:290913): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.860:290914): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99422 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.860:290914):  cwd="/"
+type=PATH msg=audit(1505882178.860:290914): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.860:290914): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.861:290915): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99422 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.861:290915):  cwd="/"
+type=PATH msg=audit(1505882178.861:290915): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.861:290915): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.923:290916): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff43bb432 a1=80000 a2=1b6 a3=24 items=1 ppid=99405 pid=99423 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.923:290916):  cwd="/"
+type=PATH msg=audit(1505882178.923:290916): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.923:290916): proctitle=72706D002D710073656C696E75782D706F6C696379
+type=SYSCALL msg=audit(1505882178.924:290917): arch=c000003e syscall=2 success=yes exit=3 a0=7ffff3c986de a1=0 a2=1b6 a3=24 items=1 ppid=99405 pid=99423 auid=4294967295 uid=993 gid=988 euid=993 suid=993 fsuid=993 egid=988 sgid=988 fsgid=988 tty=(none) ses=4294967295 comm="rpm" exe="/usr/bin/rpm" subj=system_u:system_r:setroubleshootd_t:s0-s0:c0.c1023 key=(null)
+type=CWD msg=audit(1505882178.924:290917):  cwd="/"
+type=PATH msg=audit(1505882178.924:290917): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882178.924:290917): proctitle=72706D002D710073656C696E75782D706F6C696379

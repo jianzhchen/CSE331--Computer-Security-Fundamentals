@@ -1,0 +1,35 @@
+1.
+commands used:
+
+	chcon -t httpd_sys_content_t /root/access.txt 
+	setenforce 1
+
+The first command change the type of access.txt to httpd_sys_content_t which will allow read access from web/httpd
+The second command change the selinux mode to enforce. noaccess.txt is still in type admin_home_t which will not allow read access from web.
+
+
+2.
+commands used:
+
+	#sudo yum install setools-console.x86_64
+	#seinfo -t | grep '_exec_t'
+	
+	semanage login -a -s user_u regularuser
+	chcon -u user_u hw1new
+	chcon -u user_u attack
+	
+	#sesearch --type --source=user_t | grep "_exec_t"
+	
+	chcon -t httpd_user_script_exec_t  hw1new
+	
+Change the user from unconfined to user_u. The low privliage account is named regularuser.
+With httpd_user_script_exec_t, hw1new can not access passwd_file_t.
+
+under regularuser:
+	"./hw1new < attack"" outputs nothing
+	"./hw1new < "test"" outputs -bash: test: No such file or directory
+	"cat /etc/passwd" outputs all content of /etc/passwd
+under root"
+	"./hw1new < attack"" outputs all content of /etc/passwd
+	
+	

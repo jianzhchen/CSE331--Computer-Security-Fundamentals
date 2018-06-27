@@ -1,0 +1,4 @@
+type=SYSCALL msg=audit(1505882244.662:290918): arch=c000003e syscall=2 success=yes exit=3 a0=7fffffffe61c a1=0 a2=1fffffffffff0000 a3=7fffffffde50 items=1 ppid=99310 pid=99434 auid=1001 uid=1001 gid=1001 euid=1001 suid=1001 fsuid=1001 egid=1001 sgid=1001 fsgid=1001 tty=pts4 ses=38 comm="cat" exe="/usr/bin/cat" subj=user_u:user_r:user_t:s0 key=(null)
+type=CWD msg=audit(1505882244.662:290918):  cwd="/home/regularuser/hw1"
+type=PATH msg=audit(1505882244.662:290918): item=0 name="/etc/passwd" inode=16785708 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:passwd_file_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505882244.662:290918): proctitle=636174002F6574632F706173737764

@@ -1,0 +1,14 @@
+type=AVC msg=audit(1505867724.649:546): avc:  denied  { getattr } for  pid=36879 comm="httpd" path="/root/noaccess.txt" dev="dm-0" ino=33733779 scontext=system_u:system_r:httpd_t:s0 tcontext=unconfined_u:object_r:admin_home_t:s0 tclass=file
+type=SYSCALL msg=audit(1505867724.649:546): arch=c000003e syscall=6 success=no exit=-13 a0=7ffecb8898e0 a1=7ffecb8897d0 a2=7ffecb8897d0 a3=12 items=1 ppid=36875 pid=36879 auid=4294967295 uid=48 gid=48 euid=48 suid=48 fsuid=48 egid=48 sgid=48 fsgid=48 tty=(none) ses=4294967295 comm="httpd" exe="/usr/sbin/httpd" subj=system_u:system_r:httpd_t:s0 key=(null)
+type=CWD msg=audit(1505867724.649:546):  cwd="/var/www/html"
+type=PATH msg=audit(1505867724.649:546): item=0 name="/root/noaccess.txt" inode=33733779 dev=fd:00 mode=0100777 ouid=0 ogid=0 rdev=00:00 obj=unconfined_u:object_r:admin_home_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505867724.649:546): proctitle=2F7573722F7362696E2F6874747064002D44464F524547524F554E44
+type=AVC msg=audit(1505867724.649:547): avc:  denied  { open } for  pid=36879 comm="httpd" path="/root/noaccess.txt" dev="dm-0" ino=33733779 scontext=system_u:system_r:httpd_t:s0 tcontext=unconfined_u:object_r:admin_home_t:s0 tclass=file
+type=SYSCALL msg=audit(1505867724.649:547): arch=c000003e syscall=2 success=no exit=-13 a0=7f6bb83269b8 a1=0 a2=1b6 a3=12 items=1 ppid=36875 pid=36879 auid=4294967295 uid=48 gid=48 euid=48 suid=48 fsuid=48 egid=48 sgid=48 fsgid=48 tty=(none) ses=4294967295 comm="httpd" exe="/usr/sbin/httpd" subj=system_u:system_r:httpd_t:s0 key=(null)
+type=CWD msg=audit(1505867724.649:547):  cwd="/var/www/html"
+type=PATH msg=audit(1505867724.649:547): item=0 name="/root/noaccess.txt" inode=33733779 dev=fd:00 mode=0100777 ouid=0 ogid=0 rdev=00:00 obj=unconfined_u:object_r:admin_home_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505867724.649:547): proctitle=2F7573722F7362696E2F6874747064002D44464F524547524F554E44
+type=SYSCALL msg=audit(1505867783.636:548): arch=c000003e syscall=2 success=yes exit=10 a0=7f6bb83269b8 a1=0 a2=1b6 a3=10 items=1 ppid=36875 pid=36877 auid=4294967295 uid=48 gid=48 euid=48 suid=48 fsuid=48 egid=48 sgid=48 fsgid=48 tty=(none) ses=4294967295 comm="httpd" exe="/usr/sbin/httpd" subj=system_u:system_r:httpd_t:s0 key=(null)
+type=CWD msg=audit(1505867783.636:548):  cwd="/var/www/html"
+type=PATH msg=audit(1505867783.636:548): item=0 name="/root/access.txt" inode=33668308 dev=fd:00 mode=0100777 ouid=0 ogid=0 rdev=00:00 obj=unconfined_u:object_r:httpd_sys_content_t:s0 objtype=NORMAL
+type=PROCTITLE msg=audit(1505867783.636:548): proctitle=2F7573722F7362696E2F6874747064002D44464F524547524F554E44

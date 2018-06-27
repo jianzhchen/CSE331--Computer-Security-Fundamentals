@@ -1,0 +1,81 @@
+1.
+	1.1
+		username:
+			' or ''='
+		password:
+			' or ''='
+	1.2
+		$sql = $conn->prepare("SELECT * FROM users WHERE username=? and password=?");
+		$sql->bind_param("ss",$sessionUsername,$sessionPassword);
+		$sql->execute();
+		$result = $sql->get_result();
+		
+2.
+	2.1
+		comment:
+			<script>alert("this is showing")</script>
+			
+			Can embed and run any javascript onload
+	2.2
+		addNewComment():
+			$comment=htmlspecialchars($comment);
+		
+			this will be store in db
+			&lt;script&gt;alert(&quot;this is showing&quot;)&lt;/script&gt;
+			
+3.
+	3.1
+		With bob account logged in, The Developer network tool on firefox shows that cookie 
+		on GET /cse331/ is PHPSESSID=r31k78qov3frrkuir4p35ivq11
+		I opened a new private windows, go the same network tool, select GET /cse331/ request, 
+		click edit and resend, change the header cookie value to PHPSESSID=r31k78qov3frrkuir4p35ivq11, 
+		and sent
+		In the response:
+		
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> 
+                        <strong>bob</strong>												<=========
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>bob</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="navbar-login navbar-login-session">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>
+                                            <a href="logout.php" class="btn btn-danger btn-block">Logout</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+		
+		We got the page as if we are bob
+		We can do the same for any page using the same cookie/session ID
+	
+	3.2
+		1.change cookie after every http request
+		2.make session bind with ip address of where it was logged in
+		
+4.
+	http://localhost/cse331/product.php?productId=
+	
+	we can inject any sql code into this http get query
+	For example we can append 
+		productId=1 UNION {real long table join select statement}
+	We then can spam this query to bring down the database will very little overhead at attackers end
+	
+	
+	
+	

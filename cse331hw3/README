@@ -1,0 +1,46 @@
+synprobe.py:
+	use the code from https://gist.github.com/sbz/1080258 for hexdumping
+	
+	Given an ip and optional range (default ports are 80, 23, 443, 8080, 22, 140),
+	Case 1: some raw is return on ack, dump that
+	Case 2: if no raw is return on ack, sent a http get /index.html request and dump the return.
+	
+	Output:
+		(10.164.78.243 is running metasploitable)
+		
+		synprobe.py:
+			sudo python2 synprobe.py -p 80-200 10.164.78.243
+			=======Scanning IP: 10.164.78.243 =======
+			10.164.78.243:80	 OPEN
+			0000  45 00 00 28 00 00 40 00 40 06 87 e2 0a a4 4e f3   E..(..@.@.....N.
+			0010  0a a4 4e b3 00 50 30 39 af cf 1c 13 00 00 00 00   ..N..P09........
+			0020  50 04 00 00 00 87 00 00 00 00 00 00 00 00         P.............
+
+			10.164.78.243:111	 OPEN
+			0000  45 00 00 28 00 00 40 00 40 06 87 e2 0a a4 4e f3   E..(..@.@.....N.
+			0010  0a a4 4e b3 00 6f 30 39 b1 da a7 86 00 00 00 00   ..N..o09........
+			0020  50 04 00 00 72 e9 00 00 00 00 00 00 00 00         P...r.........
+
+			10.164.78.243:139	 OPEN
+			0000  45 00 00 28 00 00 40 00 40 06 87 e2 0a a4 4e f3   E..(..@.@.....N.
+			0010  0a a4 4e b3 00 8b 30 39 b2 a7 d1 3e 00 00 00 00   ..N...09...>....
+			0020  50 04 00 00 48 48 00 00 00 00 00 00 00 00         P...HH........
+
+arpwatch.py:
+	watch any arp packet that differ from the OS's arp cache
+	
+	default interface is the first interface encounter in the OS's arp cache
+	
+	Output:
+		VM_linux arpspoof # ./arpspoof -i ens33 10.164.78.174
+		10.164.78.174 is some device on my network
+		
+		arpwatch.py:
+			vm@VM_linux ~ $ sudo python2 arpwatch.py -i ens33
+			ARP cache poisoning detector on interface: ens33
+
+			10.164.78.158 changed from 60:38:e0:11:35:4f to 00:0c:29:41:f4:83
+
+		The script is able to detect mac change from 10.164.78.158, my gateway.
+		
+	
